@@ -37,6 +37,13 @@
         android:onClick="calcular"
         android:text="sumar" />
 
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="limpiar"
+        android:text="LIMPIAR" />
+
     <TextView
         android:id="@+id/lblResultado"
         android:layout_width="match_parent"
