@@ -34,32 +34,33 @@ public class MainActivity extends AppCompatActivity {
 
     public void restar(View v){
         int num_uno, num_dos, resta;
-
+        if (validar()) {
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
             resta = num_uno - num_dos;
             resultado.setText("" + resta);
+        }
 
     }
 
     public void multiplicar(View v){
         int num_uno, num_dos, multiplicacion;
-
+        if (validar()) {
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
             multiplicacion = num_uno * num_dos;
             resultado.setText("" + multiplicacion);
-
+        }
     }
 
     public void dividir(View v){
         int num_uno, num_dos, division;
-
+        if (validar()) {
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
-
             division = num_uno / num_dos;
             resultado.setText("" + division);
+        }
     }
 
     public void limpiar(View v){
@@ -70,12 +71,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean validar() {
+        String error_numero_uno, error_numero_dos;
+        error_numero_uno= getResources().getString(R.string.error_numero_uno);
+        error_numero_dos= getResources().getString(R.string.error_numero_dos);
         if (numero_uno.getText().toString().isEmpty()) {
-            numero_uno.setError("Digite el primer digito");
+            numero_uno.setError(error_numero_uno);
             numero_uno.requestFocus();
             return false;
         } else if (numero_dos.getText().toString().isEmpty())
-            numero_dos.setError("Digite el segundo digito");
+            numero_dos.setError(error_numero_dos);
         numero_dos.requestFocus();
         return false;
     }
