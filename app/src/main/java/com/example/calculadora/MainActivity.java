@@ -23,55 +23,43 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcular(View v) {
         int num_uno, num_dos, suma;
-        try {
+        if (validar()) {
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
             suma = num_uno + num_dos;
             resultado.setText("" + suma);
-        } catch (Exception e) {
-            numero_uno.setError("Revise que se halla digitado el primer numero");
-            numero_dos.setError("Revise que se halla digitado el segundo numero");
         }
+
     }
 
     public void restar(View v){
         int num_uno, num_dos, resta;
-        try {
+
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
             resta = num_uno - num_dos;
             resultado.setText("" + resta);
-        } catch (Exception e) {
-            numero_uno.setError("Revise que se halla digitado el primer numero");
-            numero_dos.setError("Revise que se halla digitado el segundo numero");
-        }
+
     }
 
     public void multiplicar(View v){
         int num_uno, num_dos, multiplicacion;
-        try {
+
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
             multiplicacion = num_uno * num_dos;
             resultado.setText("" + multiplicacion);
-        } catch (Exception e) {
-            numero_uno.setError("Revise que se halla digitado el primer numero");
-            numero_dos.setError("Revise que se halla digitado el segundo numero");
-        }
+
     }
 
     public void dividir(View v){
         int num_uno, num_dos, division;
-        try {
+
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
 
             division = num_uno / num_dos;
             resultado.setText("" + division);
-        } catch (Exception e) {
-            numero_uno.setError("Revise que se halla digitado el primer numero");
-            numero_dos.setError("Revise que se halla digitado el segundo numero");
-        }
     }
 
     public void limpiar(View v){
@@ -81,4 +69,15 @@ public class MainActivity extends AppCompatActivity {
         numero_uno.requestFocus();
     }
 
-}
+    public boolean validar() {
+        if (numero_uno.getText().toString().isEmpty()) {
+            numero_uno.setError("Digite el primer digito");
+            numero_uno.requestFocus();
+            return false;
+        } else if (numero_dos.getText().toString().isEmpty())
+            numero_dos.setError("Digite el segundo digito");
+        numero_dos.requestFocus();
+        return false;
+    }
+    }
+
