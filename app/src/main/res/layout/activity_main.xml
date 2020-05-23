@@ -31,6 +31,11 @@
         android:hint="@string/numero_dos"
         android:inputType="number" />
 
+    <Spinner
+        android:id="@+id/cmbOperaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,34 +46,15 @@
             android:id="@+id/btnSumar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="@string/btnSumar"
             android:onClick="calcular"
-            android:text="sumar" />
-
-        <Button
-            android:id="@+id/btnRestar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="restar"
-            android:text="Restar" />
-
-        <Button
-            android:id="@+id/btnMultiplicar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="multiplicar"
-            android:text="Multiplicar" />
-
-        <Button
-            android:id="@+id/btnDividir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="dividir"
-            android:text="DIVIDIR" />
+            android:text="calcular" />
 
         <Button
             android:id="@+id/btnLimpiar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="@string/boton_limpiar"
             android:onClick="limpiar"
             android:text="LIMPIAR" />
 
@@ -77,7 +63,7 @@
     <TextView
         android:id="@+id/lblResultado"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal" />
 
 </LinearLayout>
