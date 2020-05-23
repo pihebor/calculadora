@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             num_uno = Integer.parseInt(numero_uno.getText().toString());
             num_dos = Integer.parseInt(numero_dos.getText().toString());
+
             division = num_uno / num_dos;
             resultado.setText("" + division);
         } catch (Exception e) {
